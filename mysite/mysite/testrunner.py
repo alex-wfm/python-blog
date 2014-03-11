@@ -1,8 +1,9 @@
 '''
-Created on Jun 2, 2013
+Created on 2014-3-11
 
-@author: alex
+@author: fengminwang
 '''
 
+from mysite.views import *
 
-mysite01.views.test();
+test()

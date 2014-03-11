@@ -17,8 +17,8 @@ urlpatterns = patterns('',
                        
                        
     # Examples:
-    # url(r'^$', 'mysite01.views.home', name='home'),
-    # url(r'^mysite01/', include('mysite01.foo.urls')),
+    # url(r'^$', 'mysite.views.home', name='home'),
+    # url(r'^mysite/', include('mysite.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
