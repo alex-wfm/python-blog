@@ -6,6 +6,7 @@ Created on Jun 2, 2013
 from django.http import HttpResponse, Http404
 from django.template import Template, Context
 from django.template.loader import get_template
+from django.shortcuts import render_to_response
 import datetime
 
 def hello(request):
@@ -27,11 +28,16 @@ def myHomepageView (request) :
 #     html = t.render(Context({'current_date': now}))
 #     return HttpResponse(html)
 
+# def current_datetime(request):
+#     now = datetime.datetime.now()
+#     t = get_template('current_datetime.html')
+#     html = t.render(Context({'current_date': now}))
+#     return HttpResponse(html)
+
+
 def current_datetime(request):
     now = datetime.datetime.now()
-    t = get_template('current_datetime.html')
-    html = t.render(Context({'current_date': now}))
-    return HttpResponse(html)
+    return render_to_response('current_datetime.html', {'current_date': now})
 
 
 
