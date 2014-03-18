@@ -5,6 +5,7 @@ Created on Jun 2, 2013
 '''
 from django.http import HttpResponse, Http404
 from django.template import Template, Context
+from django.template.loader import get_template
 import datetime
 
 def hello(request):
@@ -20,9 +21,15 @@ def myHomepageView (request) :
 #     html = "<html><body>It is now %s.</body></html>" % now
 #     return HttpResponse(html)
 
+# def current_datetime(request):
+#     now = datetime.datetime.now()
+#     t = Template("<html><body>It is now {{ current_date }}.</body></html>")
+#     html = t.render(Context({'current_date': now}))
+#     return HttpResponse(html)
+
 def current_datetime(request):
     now = datetime.datetime.now()
-    t = Template("<html><body>It is now {{ current_date }}.</body></html>")
+    t = get_template('current_datetime.html')
     html = t.render(Context({'current_date': now}))
     return HttpResponse(html)
 
