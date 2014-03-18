@@ -4,6 +4,7 @@ Created on Jun 2, 2013
 @author: alex
 '''
 from django.http import HttpResponse, Http404
+from django.template import Template, Context
 import datetime
 
 def hello(request):
@@ -14,10 +15,18 @@ def myHomepageView (request) :
 
 
 
+# def current_datetime(request):
+#     now = datetime.datetime.now()
+#     html = "<html><body>It is now %s.</body></html>" % now
+#     return HttpResponse(html)
+
 def current_datetime(request):
     now = datetime.datetime.now()
-    html = "<html><body>It is now %s.</body></html>" % now
+    t = Template("<html><body>It is now {{ current_date }}.</body></html>")
+    html = t.render(Context({'current_date': now}))
     return HttpResponse(html)
+
+
 
 def hours_ahead(request, offset):
     try:
