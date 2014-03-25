@@ -5,15 +5,16 @@ from mysite.views import *
 
 
 # Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+from django.contrib import admin
+admin.autodiscover()
 
 urlpatterns = patterns('',
         ('^$', myHomepageView),
         ('^hello/$', hello),
         ('^time/$', current_datetime),
         (r'^time/plus/(?P<offset>\d{1,2})/$', hours_ahead),
-        (r'^time/plus2/(?P<offset>\d{1,2})/(?P<param2>\d{1,2})/$', test_param_ext)
+        (r'^time/plus2/(?P<offset>\d{1,2})/(?P<param2>\d{1,2})/$', test_param_ext),
+        (r'^admin/', include(admin.site.urls)),
                        
                        
     # Examples:
