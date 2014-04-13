@@ -1,6 +1,7 @@
 from django.conf.urls import patterns, include, url
 
 from mysite.views import *
+from books.views import *
 
 
 
@@ -15,7 +16,7 @@ urlpatterns = patterns('',
         (r'^time/plus/(?P<offset>\d{1,2})/$', hours_ahead),
         (r'^time/plus2/(?P<offset>\d{1,2})/(?P<param2>\d{1,2})/$', test_param_ext),
         (r'^admin/', include(admin.site.urls)),
-                       
+        (r'^search-form/$', search_form),
                        
     # Examples:
     # url(r'^$', 'mysite.views.home', name='home'),
