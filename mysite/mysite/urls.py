@@ -17,6 +17,7 @@ urlpatterns = patterns('',
         (r'^time/plus2/(?P<offset>\d{1,2})/(?P<param2>\d{1,2})/$', test_param_ext),
         (r'^admin/', include(admin.site.urls)),
         (r'^search-form/$', search_form),
+        (r'^search/$', search),
                        
     # Examples:
     # url(r'^$', 'mysite.views.home', name='home'),
